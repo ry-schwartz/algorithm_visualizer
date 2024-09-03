@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="home-heading">Choose an algorithm type</h1>
+<nav class="home-nav">
+    <a href="{% url 'search' %}" class="nav-link">Search</a>
+    <a href="{% url 'sort' %}" class="nav-link">Sort</a>
+    <a href="{% url 'shortest-path' %}" class="nav-link">Shortest Path</a>
+</nav>
+{% endblock %}

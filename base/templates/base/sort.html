@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header>
+    <a href="{% url 'home' %}" class="home-button">
+        <img src="{% static 'images/home.svg' %}" alt="Home" />
+    </a>
+    <h1>Sort <br> Visualizer</h1>
+    <form action="{% url 'sort' %}" method="GET">
+        <label for="size-slider">Size: {{size}}</label>
+        <input type="range" min="10" max="40" value="10" id="size-slider" name="size">
+        <label for="speed-slider">Speed: {{speed}}</label>
+        <input type="range" min="1" max="5" step="1" value="2" id="speed-slider" name="speed">
+        <button type="submit">Generate Array</button>
+        <button id="reset-button" type="button">Reset</button>
+    </form>
+</header>
+<main>
+    <div class="visualizer-container">
+        <!-- Bars for the array will be dynamically created here -->
+    </div>
+    <div class="button-container">
+        <button onclick="runBubbleSort()">Bubble Sort</button>
+        <button onclick="runSelectionSort()">Selection Sort</button>
+        <button onclick="runInsertionSort()">Insertion Sort</button>
+        <button onclick="runMergeSort()">Merge Sort</button>
+        <button onclick="runQuickSort()">Quick Sort</button>
+    </div>
+</main>
+
+<script src="{% static 'js/sort.js' %}"></script>
+<script type="application/json" id="data-script">
+    {
+        "random_array": {{ random_array|safe }},
+        "size": {{ size }},
+        "speed": {{ speed }}
+    }
+</script>
+{% endblock %}
