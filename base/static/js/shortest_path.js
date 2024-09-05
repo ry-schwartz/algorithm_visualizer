@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const currentCell = queue.shift();
 
             if (currentCell !== startCell && currentCell !== endCell) {
-                currentCell.style.backgroundColor = 'yellow';
+                currentCell.style.backgroundColor = 'lightblue';
             }
 
             if (currentCell === endCell) {
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     visited.add(neighbor);
                     parentMap.set(neighbor, currentCell);
                     if (neighbor !== startCell && neighbor !== endCell) {
-                        neighbor.style.backgroundColor = 'orange';
+                        neighbor.style.backgroundColor = 'purple';
                     }
                 }
             }
