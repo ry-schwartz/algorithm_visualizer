@@ -16,7 +16,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [ 
     'algorithm-visualizer.ryanschwartz.dev',
-    'https://algorithm-visualizer-rs-e50e017ac3e4.herokuapp.com/',
+    'algorithm-visualizer-rs-e50e017ac3e4.herokuapp.com/',
 ]
 
 
